@@ -1,49 +1,30 @@
 function stringPlus(firstString, secondString) {
 
-    if(firstString < 0 || secondString < 0) {
-        firstString = Math.abs(firstString);
-        secondString = Math.abs(secondString);
+    let resSum = "";
+    let carry = 0;
+
+    let i = firstString.length - 1;
+    let j = secondString.length - 1;
+
+    while(i >= 0 || j >= 0 || carry) {
+        let digtsFirst = firstString[i] || "0";
+        let digtsSecond = secondString[j] || "0";
+
+        let sum = parseInt(digtsFirst) + parseInt(digtsSecond) + carry;
+        let rest = sum % 10;
+
+        resSum = rest + resSum;
+
+        carry = sum >= 10 ? 1 : 0;
+
+        j--;
+        i--;
     }
 
-    let checkFisrtString = false;
-    let checkSecondString = false;
-
-    if(checkLimitSafeIntegerFirstString(firstString) === true) {
-        checkFisrtString = true;
-    }
-
-    if(checkLimitSafeIntegerSecondString(secondString) === true) {
-        checkSecondString = true;
-    }
-
-    if(checkFisrtString === true && checkSecondString === true) {
-        const resSum = parseInt(firstString) + parseInt(secondString);
-        return resSum;
-    }
-
-    const { countFirst, countSecond } = CheckNumberOfDigits(firstString, secondString);
-
-    let digtsFirst = "";
-    let digtsSecond = "";
-
-    for(let i = countFirst; i < firstString.length; i++) {
-        digtsFirst += parseInt(firstString[i]);
-    }
-
-    for(let j = countSecond; j < secondString.length; j++) {
-        digtsSecond += parseInt(secondString[j]); 
-    }
-
-    const resSum = parseInt(digtsFirst) + parseInt(digtsSecond);
     return resSum;
 };
 
 function stringMinus(firstString, secondString) {
-
-    if(firstString < 0 || secondString < 0) {
-        firstString = Math.abs(firstString);
-        secondString = Math.abs(secondString);
-    }
 
     let aux = "";
 
@@ -52,39 +33,33 @@ function stringMinus(firstString, secondString) {
         firstString = secondString;
         secondString = aux;
     }
+   
+    ({ firstString, secondString } = CheckNumberOfDigits(firstString, secondString));
 
-    let checkFisrtString = false;
-    let checkSecondString = false;
+    let resMinus = "";
+    let carry = 0;
 
-    if(checkLimitSafeIntegerFirstString(parseInt(firstString)) === true) {
-        checkFisrtString = true;
+    for(let i = firstString.length - 1; i >= 0; i--) {
+        let digtsFirst = firstString[i];
+        let digtsSecond = secondString[i];
+
+        let minus = parseInt(digtsFirst) - parseInt(digtsSecond) - carry;
+
+        if(minus < 0) {
+            minus += 10;
+            carry = 1;
+        }else {
+            carry = 0;
+        }
+
+        resMinus = minus + resMinus;
     }
 
-    if(checkLimitSafeIntegerSecondString(parseInt(secondString)) === true) {
-        checkSecondString = true;
-    }
+    resMinus = cleanZeros(resMinus);
 
-    if(checkFisrtString === true && checkSecondString === true) {
-        const resMinus = Math.abs(parseInt(secondString) - parseInt(firstString));
-        return resMinus;
-    } 
-
-    const { countFirst, countSecond } = CheckNumberOfDigits(firstString, secondString);
-    
-    let digtsFirst = "";
-    let digtsSecond = "";
-
-    for(let i = countFirst; i < firstString.length; i++) {
-        digtsFirst += parseInt(firstString[i]); 
-    }
-
-    for(let j = countSecond; j < secondString.length; j++) {
-        digtsSecond += parseInt(secondString[j]); 
-    }
-
-    const resMinus = digtsSecond - digtsFirst;
-    return Math.abs(resMinus);
+    return resMinus;
 };
+
 
 function stringDivide(firstString, secondString) {
 
@@ -92,125 +67,97 @@ function stringDivide(firstString, secondString) {
         return "Division By Zero is Not Possible !";
     }
 
-    if(firstString < 0 || secondString < 0) {
-        firstString = Math.abs(firstString);
-        secondString = Math.abs(secondString);
+    let dividend = "";
+    let divisor = "";
+
+    if(firstString > secondString) {
+        dividend = (firstString);
+        divisor = (secondString);
+    }else {
+        dividend = (secondString);
+        divisor = (firstString);
     }
 
-    let checkFisrtString = false;
-    let checkSecondString = false;
+    let resDivide = "";
+    let currentValue = 0;
 
-    if(checkLimitSafeIntegerFirstString(parseInt(firstString)) === true) {
-        checkFisrtString = true;
+    for(let i = 0; i < dividend.length; i++) {;
+
+        currentValue = currentValue * 10 + Number(dividend[i]);
+
+        let quot = 0;
+
+        while(currentValue >= divisor) {
+            currentValue -= divisor;
+            quot++;
+        }
+
+        resDivide += quot;
     }
 
-    if(checkLimitSafeIntegerSecondString(parseInt(secondString)) === true) {
-        checkSecondString = true;
-    }
+    resDivide = cleanZeros(resDivide);
 
-    if(checkFisrtString === true && checkSecondString === true) {
-        const resDivide = parseInt(firstString) / parseInt(secondString);
-        return Math.trunc(resDivide);
-    }
-    
-    let digtsFirst = "";
-    let digtsSecond = "";
-
-    const { countFirst, countSecond } = CheckNumberOfDigits(firstString, secondString);
-
-    for(let i = countFirst; i < firstString.length; i++) {
-        digtsFirst += parseInt(firstString[i]); 
-    }
-
-    for(let j = countSecond; j < secondString.length; j++) {
-        digtsSecond += parseInt(secondString[j]); 
-    }
-
-    const resDivide = digtsFirst / digtsSecond;
-    return Math.trunc(resDivide);
-};
+    return resDivide;
+}
 
 function stringMultiply(firstString, secondString) {
 
-    if(firstString < 0 || secondString < 0) {
-        firstString = Math.abs(firstString);
-        secondString = Math.abs(secondString);
+    if(firstString === "0" || secondString === "0") {
+        return "0";
     }
 
-    let checkFisrtString = false;
-    let checkSecondString = false;
+    const resMultiply = [];
 
-    if(checkLimitSafeIntegerFirstString(parseInt(firstString)) === true) {
-        checkFisrtString = true;
+    for(let i = firstString.length - 1; i >= 0; i--) {
+
+        for(let j = secondString.length - 1; j >= 0; j--) {
+
+            const pos1 = i + j;
+            const pos2 = i + j + 1;
+
+            const product = parseInt(firstString[i]) * parseInt(secondString[j]);
+
+            const sum = (resMultiply[pos2] ?? 0) + product;
+
+            resMultiply[pos1] = (resMultiply[pos1] ?? 0) + Math.floor(sum / 10);
+            resMultiply[pos2] = sum % 10;
+        }
     }
 
-    if(checkLimitSafeIntegerSecondString(parseInt(secondString)) === true) {
-        checkSecondString = true;
-    }
+    resMultiply[0] === 0 && resMultiply.shift();
 
-    if(checkFisrtString === true && checkSecondString === true) {
-        const resMultiply = parseInt(firstString) * parseInt(secondString);
-        return resMultiply;
-    }
-
-    let digtsFirst = "";
-    let digtsSecond = "";
-    
-    const { countFirst, countSecond } = CheckNumberOfDigits(firstString, secondString);
-
-    for(let i = countFirst; i < firstString.length; i++) {
-        digtsFirst += parseInt(firstString[i]); 
-    }
-
-    for(let j = countSecond; j < secondString.length; j++) {
-        digtsSecond += parseInt(secondString[j]); 
-    }
-
-    const resMultiply = digtsFirst * digtsSecond;
-    return resMultiply;
-};
+    return resMultiply.join('');
+}
 
 
 
 
 
 
-function checkLimitSafeIntegerFirstString(firstString) {
 
-    // MAX_SAFE_INTEGER = 9007199254740991
-    if(Math.abs(firstString) > Number.MAX_SAFE_INTEGER) {
-        return console.log("The First Number is Not a Safe Integer in JS !");
-    }
-
-    return true;
-};
-
-function checkLimitSafeIntegerSecondString(secondString) {
-
-    // MAX_SAFE_INTEGER = 9007199254740991
-    if(Math.abs(secondString) > Number.MAX_SAFE_INTEGER) {
-        return console.log("The Second Number is Not a Safe Integer in JS !");
-    }
-
-    return true;
-};
-
-function CheckNumberOfDigits(firstString, secondString, countFirst = 0, countSecond = 0)  {
+function CheckNumberOfDigits(firstString, secondString)  {
 
     while(firstString.length < secondString.length) {
         firstString = "0" + firstString;
-        countFirst++;
     }
 
     while(secondString.length < firstString.length) {
         secondString = "0" + secondString;
-        countSecond++;
     }
 
-    return {firstString, secondString, countFirst, countSecond};
+    return { firstString, secondString };
 };
+
+function cleanZeros(result) {
+
+    while(result[0] === '0') {
+        result = result.substring(1);
+    }
+
+    return result;
+}
 
 console.log(stringPlus("", "")); // Add the value of FirstString and SecondString, Example "88", "92" or "49467894465165198"
 console.log(stringMinus("", "")); // Add the value of FirstString and secondString.
-console.log(stringDivide("", "")); // Add the value of FirstString and secondString.
+console.log(stringDivide("", "")); // Add the value of FirstString and secondString, OBS(Always the biggest Number will be the (dividend)).
 console.log(stringMultiply("", "")) // Add the value of FirstString and secondString.
