@@ -2,24 +2,23 @@ function addValues(firstParam, secondParam) {
 
     if(typeof(firstParam) === "undefined" || typeof(secondParam) === "undefined") {
         throw new Error("You can't add add parameters undefined");
+
+    }else {
+
+        if(firstParam instanceof Array  && secondParam instanceof Array) {
+            return firstParam.concat(secondParam);
+        } 
+
+        let resultTypes = 
+
+            typeof(firstParam) === "string" && typeof(secondParam) === "string" ? firstParam + secondParam :
+            typeof(firstParam) === "number" && typeof(secondParam) === "number" ? firstParam + secondParam :
+            typeof(firstParam) === "boolean" && typeof(secondParam) === "boolean" ? firstParam + secondParam === 1 :
+            typeof(firstParam) === "object" && typeof(secondParam) === "object" ? firstParam + secondParam :
+            typeof(firstParam) === "number" && typeof(secondParam) === "number" && firstParam && secondParam > Number.MAX_SAFE_INTEGER ? BigInt(firstParam) + BigInt(secondParam) : Error("Parameters not Supported");
+
+        return resultTypes;
     }
-
-    if(firstParam instanceof Array  && !secondParam instanceof Array || secondParam instanceof Array  && !firstParam instanceof Array) {
-        throw new Error("You cannot add a parameter of type object with a second different parameter type!")
-    }
-
-    if(firstParam instanceof Array  && secondParam instanceof Array) {
-        return firstParam.concat(secondParam);
-    }
-
-    let err = Error("Parameters not Supported");
-
-    let result = 
-        typeof(firstParam) || typeof(secondParam) === "string" ? firstParam + secondParam :
-        typeof(firstParam) || typeof(secondParam) === "number" ? firstParam + secondParam :
-        typeof(firstParam) || typeof(secondParam) === "boolean" ? firstParam + secondParam === 1 : err;
-
-    return result;
 }
 
 function stringifyValue(singleParam) {
