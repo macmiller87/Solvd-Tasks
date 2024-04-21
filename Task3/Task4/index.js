@@ -4,9 +4,14 @@ function calculateFactorial(num) {
         throw new Error("The num parameter must to be a number !");
     }
 
-    let resNumFact = num === 0 ? 1 : num * calculateFactorial(num - 1);
+    const newFunction = (num, acc) => {
 
-    return resNumFact;
+        let resNumFact = num === 0 ? acc : newFunction(num - 1, num * acc);
+
+        return resNumFact;
+    };
+    
+    return newFunction(num, 1);
 }
 
 function power(base, exponent) {
