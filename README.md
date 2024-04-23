@@ -3,7 +3,7 @@
 #### Tasks Enunciated
 
 <details>
-    <summary>Task 1</summary>
+    <summary><a href="https://github.com/macmiller87/Solvd-Tasks/tree/master/Task1">Task 1</a></summary>
 
 #### String Arithmetic Operations.
 
@@ -32,7 +32,7 @@ Division should only result in an integer value.
 
 
 <details>
-    <summary>Task 2</summary>
+    <summary><a href="https://github.com/macmiller87/Solvd-Tasks/tree/master/Task2">Task 2</a></summary>
 
 - Task: Create a JavaScript library that provides advanced data transformation functions. The library should include the following features:
 
@@ -52,7 +52,7 @@ stringifyValue: Accepts a single argument of any type and converts it to a strin
 </details>
 
 <details>
-    <summary>Task 3</summary>
+    <summary><a href="https://github.com/macmiller87/Solvd-Tasks/tree/master/Task3">Task 3</a></summary>
 
 #### Task 1: Immutability and Pure Functions.
 
@@ -100,7 +100,7 @@ stringifyValue: Accepts a single argument of any type and converts it to a strin
 </details>
 
 <details>
-    <summary>Task 4</summary>
+    <summary><a href="https://github.com/macmiller87/Solvd-Tasks/tree/master/Task4">Task 4</a></summary>
 
 #### Task 1: Object Property Manipulation
 
@@ -163,6 +163,8 @@ balance: 1000 (default value)
 - Implement a function called `validateObject` that takes an object and a validation schema as arguments. The schema should define the required properties, their types, and any additional validation rules. The function should return true if the object matches the schema, and false otherwise. You can choose any schema you want.
 
 </details>
+
+
 
 
 
