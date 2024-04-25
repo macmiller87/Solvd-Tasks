@@ -5,12 +5,12 @@ const person = {
     email: "john.doe@example.com",
 
     updateInfo(info) {
-        this.firstName = info.firstName,
-        this.lastName = info.lastName,
-        this.age = info.age,
-        this.email = info.email
+        Object.getOwnPropertyNames(info).forEach((property) => {
 
-        return info;
+            if(Object.hasOwn(this, property) && Object.getOwnPropertyDescriptor(this, property).writable) {
+                Object.defineProperty(this, property, { value: info[property] });
+            }
+        });
     }
 };
 
@@ -25,16 +25,7 @@ Object.defineProperty(person, "address", {
     configurable:false
 });
 
-const personInfo = {
-    firstName: "Shiryu",
-    lastName: "Dragon",
-    age: 37,
-    email: "knightsoftheZodiac@gmail.com",
-};
-
-const resUpdatePersonInfo = person.updateInfo(personInfo);
+person.updateInfo({ address: { city: "São Paulo, Brazil" } });
 
 console.log(person);
-console.log(person.adress = {  address: "somewhere in the world"  });
-console.log(resUpdatePersonInfo);
-
+console.log(person.address.city);
