@@ -2,20 +2,26 @@ function createImmutableObject(object) {
 
     const newObject = Object.assign({}, object);
 
-    for(let property in newObject) {
+    const handleInnerObject = (innerObject) => {
 
-        if (newObject.hasOwnProperty(property)) {
+        for(const property in innerObject) {
 
-            if (newObject[property] instanceof Object) {
-                newObject[property];
+            if(innerObject.hasOwnProperty(property)) {
+    
+                if (innerObject[property] instanceof Object) {
+                    handleInnerObject(innerObject[property]);
+                }
+    
+                Object.defineProperty(innerObject, property, { writable: false, configurable: false });
             }
-
-            Object.defineProperty(newObject, property, { writable: false, configurable: false });
         }
+
     }
 
+    handleInnerObject(newObject);
     return newObject;
 }
+
 
 const person = {
     name: "Chaves",
@@ -30,5 +36,8 @@ const immutableObject = createImmutableObject(person);
 console.log(Object.getOwnPropertyDescriptors(immutableObject));
 
 console.log(immutableObject.keys.numbers);
-Object.getOwnPropertyDescriptors(immutableObject.keys.numbers.push(88));
+console.log(Object.getOwnPropertyDescriptors(immutableObject.keys.numbers));
+
+immutableObject.keys.numbers[0] = 88;
 console.log(immutableObject.keys.numbers);
+
