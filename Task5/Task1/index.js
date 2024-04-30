@@ -59,10 +59,6 @@ function customFilterUnique(array, callBack) {
 
                 execCaseObject = array.filter((item) => {
 
-                    if(item.name === undefined || item.name === null || item.age === undefined || item.age === null) {
-                        throw new Error("Unsupported types !");
-                    }
-
                     const filteredItems = !setFilterObject.has(item.name);
                     setFilterObject.add(item.name);
         
@@ -92,6 +88,6 @@ const execCaseStrings = customFilterUnique(["May", "BlueMary", "May", "Robert", 
 console.log(execCaseStrings);
 console.log();
 
-const execCaseObject = customFilterUnique([{ name: "SubZero", age: 28 }, { name: "Scorpion", age: 22 }, { name: "SubZero", age: 28}], callBack);
+const execCaseObject = customFilterUnique([ { a: 1, b: 2 }, { a: 5, b: 6 }, { a: 5, b: 6 } ], callBack);
 console.log(execCaseObject);
 
