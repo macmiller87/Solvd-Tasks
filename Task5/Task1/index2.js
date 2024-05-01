@@ -16,18 +16,30 @@ function customFilterUnique(array, callBack) {
 
         let filter = [... new Set(resp)];
 
+        let aux = [];
+
         for(let i in filter) {
 
             if(filter[i] === 5) {
-                filter[i] = "a: " + filter[i];
+                aux.push("a: ");
             }
 
             if(filter[i] === 6) {
-                filter[i] = "b: " + filter[i];
+                aux.push("b: ");
             }
+
+            aux.push(filter[i] + " ");
         }
 
-        return filter.join(" ");
+        let result = [];
+        let index = 0;
+    
+        while(index < aux.length) {
+            const sliceArray = aux.slice(index, index+= 4);
+            result.push("{ " + sliceArray + " }");
+        }
+
+        return result.toString().split(",").join(" ");
     };
 
     return callBack();
