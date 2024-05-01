@@ -51,16 +51,16 @@ function customFilterUnique(array, callBack) {
             const filterStrings = [... new Set(joinStrings.split(/\W+/))];
 
             // Case object
-            let execCaseObject;
+            let execCaseObjec;
             
             if(execCaseNumber === false && checkExecCaseString === false) {
 
                 const setFilterObject = new Set();
 
-                execCaseObject = array.filter((item) => {
+                execCaseObjec = array.filter((item) => {
 
-                    const filteredItems = !setFilterObject.has(item.name);
-                    setFilterObject.add(item.name);
+                    const filteredItems = !setFilterObject.has(item.a, item.b);
+                    setFilterObject.add(item.a, item.b);
         
                     return filteredItems;
                 });
@@ -69,7 +69,7 @@ function customFilterUnique(array, callBack) {
             const result = 
                 checkExecCaseNumber === true ? execCaseNumber : 
                 checkExecCaseString === true ? filterStrings : 
-                execCaseObject;
+                execCaseObjec;
     
             return result;
         }
@@ -88,6 +88,14 @@ const execCaseStrings = customFilterUnique(["May", "BlueMary", "May", "Robert", 
 console.log(execCaseStrings);
 console.log();
 
-const execCaseObject = customFilterUnique([ { a: 1, b: 2 }, { a: 5, b: 6 }, { a: 5, b: 6 } ], callBack);
-console.log(execCaseObject);
+let arrayOfObjects = [
+    { a: 1, b: 2 },
+    { a: 1, b: 2 },
+    { a: 3, b: 4 },
+    { a: 5, b: 6 },
+    { a: 7, b: 8 },
+    { a: 9, b: 0 }
+];
 
+const execCaseObject = customFilterUnique(arrayOfObjects, callBack);
+console.log(execCaseObject);
