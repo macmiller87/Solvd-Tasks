@@ -2,16 +2,15 @@ function throttle(func, interval) {
 
     let timeoutId;
 
-    const newFunction = () => {
+    return newFunction = (...args) => {
 
         clearTimeout(timeoutId);
 
         timeoutId = setTimeout(() => {
-            return func();
+            func.apply(this, args);
         }, interval);
     };
 
-    return newFunction();
 }
 
 function onScroll(event) {

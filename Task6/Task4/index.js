@@ -2,16 +2,15 @@ function debounce(func, delay) {
 
     let timeoutId;
 
-    const newFunction = () => {
+    return newFunction = (...args) => {
 
         clearTimeout(timeoutId);
 
         timeoutId = setTimeout(() => {
-            return func();
+            func.apply(this, args);
         }, delay);
     };
-
-    return newFunction();
+    
 }
 
 function debouncedSearch(query) {
