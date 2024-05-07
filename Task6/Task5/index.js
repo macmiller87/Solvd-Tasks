@@ -1,15 +1,18 @@
 function throttle(func, interval) {
 
-    let timeoutId;
+    let timeout = null;
 
     return newFunction = (...args) => {
 
-        clearTimeout(timeoutId);
+        if(!timeout) {
 
-        timeoutId = setTimeout(() => {
-            func.apply(this, args);
-        }, interval);
-    };
+            func(...args);
+
+            timeout = setTimeout(() => {
+                timeout = null;
+            }, interval);
+        }
+    }
 
 }
 
