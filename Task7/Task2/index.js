@@ -1,21 +1,5 @@
 function promiseAllSettled(arrPromises) {
 
-    const objectResponse = [
-
-        {
-            status: "",
-            value: 0,
-        },
-        {
-            status: "",
-            reason: "",
-        },
-        {
-            status: "",
-            value: 0,
-        }
-    ]
-
     const promise = new Promise((resolve, reject) => {
 
         const aux = [];
@@ -32,22 +16,27 @@ function promiseAllSettled(arrPromises) {
 
                 if(typeof(aux[i]) === "number") {
 
-                    objectResponse[i].status = "fulfilled";
-                    objectResponse[i].value = aux[i];
+                    aux[i] = {
+                        status: "fulfilled",
+                        value: aux[i]
+                    }
+
                     count++;
                 }
             })
             .catch((error) => {
 
-                objectResponse[i].status = "rejected";
-                objectResponse[i].reason = aux[i] === undefined ? error : aux[i];
+                aux[i] = {
+                    status: "rejected",
+                    reason: aux[i] === undefined ? error : aux[i]
+                }
+
                 count++;
-                
             })
             .finally(() => {
 
                 if(count === arrPromises.length) {
-                    resolve(objectResponse);
+                    resolve(aux);
                 }
             });
         }
