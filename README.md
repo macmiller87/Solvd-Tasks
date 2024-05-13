@@ -309,3 +309,66 @@ balance: 1000 (default value)
 
 </details>
 
+<details>
+    <summary><a href="https://github.com/macmiller87/Solvd-Tasks/tree/master/Task8">Task 8</a></summary>
+
+- Design and implement an object-oriented program in JavaScript to simulate the functioning of an online bookstore. This assignment will test your understanding of classes, encapsulation, inheritance, and polymorphism.
+
+#### Part 1: Class Design
+
+###### Book Class: 
+
+- Create a class called `Book` to represent individual books. Each book should have properties like title, author, ISBN, price, and availability.
+
+###### User Class: 
+
+-Create a class called `User` to represent users of the bookstore. Users should have properties like name, email, and a unique user ID.
+
+###### Cart Class: 
+
+- Design a class called `Cart` to simulate a shopping cart. It should have methods to add books, remove books, and calculate the total price of the books in the cart.
+
+###### Order Class: 
+
+- Create an `Order` class to represent a user's order. It should include information about the user, the books ordered, and the total price.
+
+#### Part 2: Implementation
+
+###### Create Objects: 
+
+- Instantiate multiple `Book` objects, representing different books available in the bookstore. Also, create a few `User` objects.
+
+###### Add Books to Cart: 
+
+- Simulate users adding books to their cart by creating instances of the `Cart` class and using its methods.
+
+###### Place Orders: 
+
+- Implement the process of placing an order. Users should be able to create instances of the `Order` class, specifying the books they want to purchase.
+
+#### Part 3: Demonstration
+
+###### Create a Scenario: 
+
+- Design a scenario where users browse books, add them to their carts, and place orders. Simulate interactions between users, carts, and orders.
+
+###### Interaction: 
+
+- Demonstrate how objects of different classes interact with each other. For example, a user interacts with a cart, and a cart interacts with orders.
+
+###### Polymorphism: 
+
+- Utilize polymorphism by treating different types of books (e.g., fiction, non-fiction) uniformly when users add them to the cart.
+
+#### Part 4: Documentation
+
+###### Documentation: 
+
+- Provide clear and concise comments and documentation for your code. Explain the purpose of each class, method, and property. Describe the interaction between different objects and how encapsulation is maintained.
+
+#### Submission
+
+- Submit your JavaScript program along with detailed documentation and comments that explain your code. Ensure that your code is well-structured and adheres to best practices in object-oriented programming.
+
+</details>
+

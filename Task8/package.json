@@ -1,0 +1,11 @@
+{
+  "name": "Task8",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node Files/Order.js",
+    "dev:debug": "node --inspect Files/Order.js"
+  }
+}
