@@ -40,4 +40,4 @@
 
 - 2. Go to folder `Task8`, and with `node` instaled and some package manager, kind npm, yarn etc .... exec one of the next scripts, based on previous instructions.
 
-- `yanr dev` or `npm dev` to run the application, or simply `node Order.js`, in terminal.
+- `yarn dev` or `npm dev` to run the application, or simply `node Order.js`, in terminal.

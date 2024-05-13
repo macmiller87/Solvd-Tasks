@@ -312,6 +312,7 @@ balance: 1000 (default value)
 <details>
     <summary><a href="https://github.com/macmiller87/Solvd-Tasks/tree/master/Task8">Task 8</a></summary>
 
+
 - Design and implement an object-oriented program in JavaScript to simulate the functioning of an online bookstore. This assignment will test your understanding of classes, encapsulation, inheritance, and polymorphism.
 
 #### Part 1: Class Design
@@ -322,7 +323,7 @@ balance: 1000 (default value)
 
 ###### User Class: 
 
--Create a class called `User` to represent users of the bookstore. Users should have properties like name, email, and a unique user ID.
+- Create a class called `User` to represent users of the bookstore. Users should have properties like name, email, and a unique user ID.
 
 ###### Cart Class: 
 
