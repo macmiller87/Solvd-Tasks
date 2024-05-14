@@ -2,7 +2,7 @@
 
 ###### Main goal of this application
 
-- This application have as main goal, register users ans books, for users to be can possible to buy books in the bookstore trought their carts and placing your orders and getting the price of their orders, based on books prices.
+- This application have as main goal, register users and books, for users to be can possible to buy books in the bookstore trought their carts and placing your orders and getting the price of their orders, based on books prices.
 
 ###### Structure and Goal of the Classes
 
@@ -40,4 +40,4 @@
 
 - 2. Go to folder `Task8`, and with `node` instaled and some package manager, kind npm, yarn etc .... exec one of the next scripts, based on previous instructions.
 
-- `yarn dev` or `npm dev` to run the application, or simply `node Order.js`, in terminal.
+- `yarn dev` or `npm dev` to run the application, or simply `node Files/Order.js`, in terminal.
