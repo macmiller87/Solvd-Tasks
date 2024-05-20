@@ -312,7 +312,6 @@ balance: 1000 (default value)
 <details>
     <summary><a href="https://github.com/macmiller87/Solvd-Tasks/tree/master/Task8">Task 8</a></summary>
 
-
 - Design and implement an object-oriented program in JavaScript to simulate the functioning of an online bookstore. This assignment will test your understanding of classes, encapsulation, inheritance, and polymorphism.
 
 #### Part 1: Class Design
@@ -373,3 +372,45 @@ balance: 1000 (default value)
 
 </details>
 
+<details>
+    <summary><a href="https://github.com/macmiller87/Solvd-Tasks/tree/master/Task9">Task 9</a></summary>
+
+#### Task
+
+- Demonstrate your knowledge of data structures (stack, queue, tree, graph, linked list) and implement algorithms to solve specific problems related to these data structures in JavaScript.
+
+###### Part 1: Data Structure Implementations
+
+- `Stack`: Implement a class for a stack data structure. Include methods for push, pop, and peek.
+
+- `Queue`: Implement a class for a queue data structure. Include methods for enqueue, dequeue, and peek.
+
+- `Binary Tree`: Implement a class for a binary tree data structure. Include methods for inserting nodes, searching for a node, and traversing the tree (e.g., in-order, pre-order, post-order).
+
+- `Graph`: Implement a class for a graph data structure. Include methods for adding vertices and edges, performing depth-first search (DFS), and breadth-first search (BFS).
+
+- `Linked List`: Implement a class for a singly linked list data structure. Include methods for inserting nodes, deleting nodes, and searching for a node.
+
+###### Part 2: Algorithmic Problems
+
+- `Min/Max Stack`: Implement a class for a stack that supports finding the minimum and maximum elements in constant time (O(1)). Include methods for push, pop, getMin, and getMax.
+
+- `Binary Search Tree`: Implement a function to determine if a binary tree is a binary search tree (BST). Provide an efficient algorithm that checks whether the tree satisfies the BST property.
+
+- `Graph Algorithms`: Implement algorithms to find the shortest path between two vertices in a graph using both Dijkstra's algorithm and Breadth-First Search (BFS).
+
+- `Linked List Cycle`: Implement a function to detect if a linked list has a cycle. Use Floyd's Cycle Detection Algorithm (Tortoise and Hare algorithm) to solve this problem efficiently.
+
+###### Part 3: Demonstration
+
+- `Usage Demonstration`: Create instances of your data structures and demonstrate their usage with sample data. Show how the algorithms you implemented can solve practical problems using these data structures.
+
+###### Part 4: Documentation
+
+- `Documentation`: Provide clear and concise comments and documentation for your code. Explain the purpose of each data structure, method, and algorithm. Describe how the algorithms work and their time complexity.
+
+###### Submission
+
+- Submit your JavaScript code along with detailed documentation and comments that explain your data structure implementations and algorithms. Ensure that your code is well-structured and adheres to best practices in data structures and algorithms.
+
+</details>

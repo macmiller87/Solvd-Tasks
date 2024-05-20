@@ -1,0 +1,11 @@
+{
+  "name": "Task9",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node Files/BinaryTree.js",
+    "dev:debug": "node --inspect Files/BinaryTree.js"
+  }
+}
