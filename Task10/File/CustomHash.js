@@ -146,7 +146,11 @@ const hash1 = customHash.hash("key 1");
 const hash2 = customHash.hash("key 2");
 const hash3 = customHash.hash("key 3");
 const hash4 = customHash.hash("key 4");
+<<<<<<< HEAD
 
+=======
+;
+>>>>>>> bc8a9426780dc8f5371eee7a846645b9eefecd73
 console.log("HashNumber:", hash1);
 console.log("HashNumber:", hash2);
 console.log("HashNumber:", hash3);
