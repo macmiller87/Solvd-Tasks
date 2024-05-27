@@ -1,0 +1,10 @@
+{
+  "name": "Task10",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node File/CustomHash.js",
+    "dev:debug": "node --inspect  File/CustomHash.js"
+  }
+}
