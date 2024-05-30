@@ -78,7 +78,7 @@ class CustomHash {
             }
         }
 
-        throw new Error("Key dosen't exist in Hash Table !");
+        return undefined;
     }
 
     /**
@@ -105,7 +105,7 @@ class CustomHash {
             }
         }
 
-        throw new Error("Key dosen't exist in Hash Table !");
+        return false;
     }
 
     /**
