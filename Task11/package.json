@@ -1,0 +1,14 @@
+{
+  "name": "Task11",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node File/index.js",
+    "dev:debug": "node File/index.js"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.21"
+  }
+}

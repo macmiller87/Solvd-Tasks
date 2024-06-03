@@ -463,3 +463,58 @@ balance: 1000 (default value)
 - Submit your JavaScript code for the custom hash function and hash table along with your documentation and analysis. Include test cases that demonstrate the correctness and efficiency of your implementation.
 
 </details>
+
+<details>
+    <summary><a href="https://github.com/macmiller87/Solvd-Tasks/tree/master/Task11">Task 11</a></summary>
+
+#### Task
+
+- Implement a simplified version of the `JSON.parse` function in JavaScript using regular expressions. This assignment will test your understanding of JSON syntax and your ability to use regular expressions for pattern matching.
+
+#### Part 1: JSON Syntax Understanding
+
+###### JSON Syntax: 
+
+- Begin by revisiting the JSON (JavaScript Object Notation) syntax. Make sure you understand the basic structure of JSON objects, arrays, strings, numbers, booleans, and null values.
+
+###### Parsing Rules: 
+
+- Familiarize yourself with the rules for parsing JSON, including how to handle nested objects and arrays.
+
+#### Part 2: JSON Parser Implementation
+
+###### Implement JSON.parse: 
+
+- Create a JavaScript function called `myJSONParse` that takes a JSON-formatted string as input and returns the corresponding JavaScript object. You should use regular expressions to tokenize and parse the input string.
+
+###### Tokenization: 
+
+- Implement tokenization by using regular expressions to identify JSON elements (objects, arrays, strings, numbers, booleans, null, etc.) in the input string.
+
+###### Parsing: 
+
+- Implement a parsing algorithm that processes the tokens generated in the previous step and constructs the corresponding JavaScript object.
+
+###### Error Handling: 
+
+- Ensure your implementation handles common JSON syntax errors gracefully and provides informative error messages when parsing fails.
+
+###### Testing: 
+
+- Test your `myJSONParse` function with various JSON strings to ensure it can correctly parse them into JavaScript objects.
+
+#### Part 3: Documentation and Reflection
+
+###### Documentation: 
+
+- Provide clear comments and documentation in your code to explain how your `myJSONParse` function works and how you used regular expressions.
+
+###### Reflect: 
+
+- Write a brief reflection on your experience implementing a JSON parser with regular expressions. Discuss any challenges you encountered and how you addressed them.
+
+#### Submission
+
+- Submit your JavaScript code for the `myJSONParse` function, along with any test cases you used to validate its correctness. Include the documentation and reflection as well.
+
+</details>
