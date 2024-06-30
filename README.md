@@ -518,3 +518,7 @@ balance: 1000 (default value)
 - Submit your JavaScript code for the `myJSONParse` function, along with any test cases you used to validate its correctness. Include the documentation and reflection as well.
 
 </details>
+
+<details>
+    <summary><a href="https://github.com/macmiller87/Solvd-Employee-Leave-Management">Personal Project</a></summary>
+<details>
