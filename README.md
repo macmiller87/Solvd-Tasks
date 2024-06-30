@@ -528,4 +528,4 @@ balance: 1000 (default value)
 
 - Create an employee leave management system for a company. When an employee requests vacation days, the system calculates the number of days available and the corresponding payout, if applicable.
 
-<details>
+</details>
