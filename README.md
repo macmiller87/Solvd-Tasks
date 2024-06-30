@@ -521,4 +521,11 @@ balance: 1000 (default value)
 
 <details>
     <summary><a href="https://github.com/macmiller87/Solvd-Employee-Leave-Management">Personal Project</a></summary>
+
+#### Employee Leave Management
+
+###### Project Description: 
+
+- Create an employee leave management system for a company. When an employee requests vacation days, the system calculates the number of days available and the corresponding payout, if applicable.
+
 <details>
